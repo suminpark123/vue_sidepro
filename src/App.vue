@@ -85,6 +85,7 @@ export default {
 <style>
 body{
   margin: 0;
+  background: whitesmoke;
 }
 div {
   box-sizing: border-box;

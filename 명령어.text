@@ -1,3 +1,8 @@
 vue create 파일명 : vue 프로젝트 생성
 npm run serve : 미리보기
 vue cli설치 -> vue create 생성가능
+
+#내일 할일
+-모달창에 post.js object데이터 띄우기
+
+일단은 이정도일단락

@@ -9,7 +9,7 @@
   <div class="black-bg" v-if="모달창열림==true">
     <div class="white-bg">
       <h4>상세페이지</h4>
-      <p>모달창내용</p>
+      <p>{{ 원룸들[선택된상품인덱스].content }}</p>
       <button @click="모달창열림=false">닫기</button>
     </div>
   </div>
@@ -30,7 +30,7 @@
 
   <div v-for="(a,i) in 원룸들" :key="i">
     <img :src=원룸들[i].image class="room-img">
-    <h4 @click="모달창열림=true">{{원룸들[i].title}}</h4>
+    <h4 @click="상품클릭(i)">{{원룸들[i].title}}</h4>
     <p>월세 : {{원룸들[i].price}}원</p>
     <!-- @ -> v-on: -->
     <!-- <button @click="신고수[0]++">허위매물신고</button> <span>신고수 : {{신고수[0]}}</span> -->
@@ -66,16 +66,18 @@ export default {
   data(){
     return{
       원룸들 : data,
+      선택된상품인덱스 : null,
       모달창열림 : false,
       신고수 : [0,0,0], 
       메뉴들 : ['Home','Shop','About'],
       // products : ['역삼동원룸','천호동원룸','마포구원룸'],
     }
   },
-  methods : {
- 
-   
-
+  methods : {   
+    상품클릭(인덱스) {
+    this.선택된상품인덱스 = 인덱스;
+    this.모달창열림 = true;
+  }
   },
   components: {
   }
